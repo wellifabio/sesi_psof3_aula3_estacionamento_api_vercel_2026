@@ -14,7 +14,19 @@ const veiculoRoutes = require('../src/routes/veiculo.routes');
 app.use('/veiculo', veiculoRoutes);
 
 app.get('/', (req, res) => {
-  res.json({ message: 'API estacionamento online' });
+  res.json({ message: 'API estacionamento online',rotas:[
+    '/':'GET',
+    '/veiculo/cadastrar':'POST',
+    '/veiculo/listar':'GET',
+    '/veiculo/buscar/:placa':'GET',
+    '/veiculo/atualizar/:placa':'PUT',
+    '/veiculo/excluir/:placa':'DELETE',
+    '/estadia/cadastrar':'POST',
+    '/estadia/listar':'GET',
+    '/estadia/buscar/:id':'GET',
+    '/estadia/atualizar/:id':'PUT',
+    '/estadia/excluir/:id':'DELETE',
+  ] });
 });
 
 module.exports = app;
